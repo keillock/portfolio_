@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Keil - Portfolio</title>
+<link href="img/favicon.ico" rel="icon">
+<link href="css/catto.css" rel="stylesheet">
+<link href="css/catto.min.css" rel="stylesheet">
+<link href="css/bootstrap-custom.css" rel="stylesheet">
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+</head>
+
+<body data-spy="scroll" data-target=".navbar" data-barba="wrapper">
+	<div class="load-container">
+		<div class="loading-screen"></div>
+	</div>
+    
+	<header>
+	
+			<div class="nav-wrapper">
+				<nav>
+			
+				
+                  <a href="index.html" class="hover-this "><span>Home&nbsp;&nbsp;</span></a>
+			      <a href="works.html" class="hover-this "><span>works&nbsp;&nbsp;</span></a>
+                  <a href="about.html" class="hover-this "><span>about&nbsp;&nbsp;</span></a>
+                  <a href="contact.html" class="hover-this "><span>contact</span></a>
+				
+                  <div class="cursor"></div>
+            </nav>
+	
+		</div>
+	</header>
+	<main data-barba="container" data-barba-namespace="home">
+		<section id="hero">
+		<div class="container">
+		<div class="row intro">
+			<article class="col-md-3 col-sm-6">
+		<h1 class="welcome h-grow a-swing" >  Hello!</h1>
+		<h2 class=" a-heartBeat h-flipUp-180 ">I'm Keil</h2>
+		<h6 class="animate-this h-jello">UX & UI DESIGNER</h6>
+				</article>
+			<article class="col-md-5 col-sm-0"></article>
+			
+
+			<article class="col-md-4 col-sm-6">
+				<img src="img/wlogo.png" class="img-fluid wlogo animate-this welcome" width="60%" alt="logo">
+			</article>
+			
+			</div>
+			<div class="row">
+			
+			<div class="square animate-this" >
+				<div class="content">
+					<span></span>
+					<span></span>
+					<span></span>
+					
+					<h3>my works</h3>
+					
+				</div>
+			</div>
+				
+				</div>
+			
+			</div>
+	
+	</section>
+	</main>
+    <script src="/js/code.jquery.com/jquery.min.js"></script>
+    <script src="/js/jquery.svg3dtagcloud.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://unpkg.com/@barba/core"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/gsap.min.js"></script>
+    <script src="js/main.js"></script>
+	<script src="js/scrollcat.js"></script>
+	<script src="js/scrollcat.min.js"></script>
+	<script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+	<script src="js/owl.carousel.min.js"></script>
+	<script src="js/jquery.easing.min.js"></script>
+	<script src="js/jquery.nav.js"></script>
+    <script>
+		(function () {
+
+      const link = document.querySelectorAll('nav > .hover-this');
+      const cursor = document.querySelector('.cursor');
+
+      const animateit = function (e) {
+            const span = this.querySelector('span');
+            const { offsetX: x, offsetY: y } = e,
+            { offsetWidth: width, offsetHeight: height } = this,
+
+            move = 25,
+            xMove = x / width * (move * 2) - move,
+            yMove = y / height * (move * 2) - move;
+
+            span.style.transform = `translate(${xMove}px, ${yMove}px)`;
+
+            if (e.type === 'mouseleave') span.style.transform = '';
+      };
+
+      const editCursor = e => {
+            const { clientX: x, clientY: y } = e;
+            cursor.style.left = x + 'px';
+            cursor.style.top = y + 'px';
+      };
+
+      link.forEach(b => b.addEventListener('mousemove', animateit));
+      link.forEach(b => b.addEventListener('mouseleave', animateit));
+      window.addEventListener('mousemove', editCursor);
+
+})();
+		$(function() {
+			$(window).on('scroll', function () {
+				if ($(window).scrollTop() > 48) {
+					$('.header-area').addClass('sticky slideInDown');
+				} else {
+					$('.header-area').removeClass('sticky slideInDown');
+				}
+			});
+			
+			$('#nav').onePageNav({
+				currentClass: 'active',
+				scrollSpeed: 1000,
+				easing: 'easeOutQuad'
+        	});
+			
+			
+			
+		});
+	</script>
+	
+	
+</body>
+
+</html>
